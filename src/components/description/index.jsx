@@ -1,8 +1,7 @@
 import { classNames } from "../../utils";
 
 import CartIcon from "../icons/CartIcon";
-import MinusIcon from "../icons/MinusIcon";
-import PlusIcon from "../icons/PlusIcon";
+import Counter from "../counter";
 
 const Description = () => {
 	return (
@@ -30,21 +29,8 @@ const Description = () => {
 					$250.00
 				</span>
 			</div>
-			<div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-4 select-none">
-				<div
-					className={classNames(
-						"flex w-full lg:w-[160px] items-center justify-evenly gap-8",
-						"px-4 mt-4 md:mt-0 bg-primary-light-grayish-blue"
-					)}
-				>
-					<div className="cursor-pointer">
-						<MinusIcon />
-					</div>
-					<span className="text-lg font-bold px-4">3</span>
-					<div className="cursor-pointer">
-						<PlusIcon />
-					</div>
-				</div>
+			<div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-3 select-none">
+				<Counter />
 				<button
 					className={classNames(
 						"flex items-center justify-center gap-3 w-full lg:w-[60%]",
