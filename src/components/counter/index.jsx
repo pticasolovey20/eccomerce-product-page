@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useApp } from "../../context/AppContext";
 import { classNames } from "../../utils";
 
 import MinusIcon from "../icons/MinusIcon";
 import PlusIcon from "../icons/PlusIcon";
 
 const Counter = () => {
-	const [amount, setAmount] = useState(0);
+	const { amount, setAmount } = useApp();
 
 	return (
 		<div

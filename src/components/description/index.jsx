@@ -1,9 +1,21 @@
+import { useApp } from "../../context/AppContext";
 import { classNames } from "../../utils";
 
 import CartIcon from "../icons/CartIcon";
 import Counter from "../counter";
+import Button from "../button";
 
 const Description = () => {
+	const { amount, setAmount, setCart } = useApp();
+
+	const handleAddToCart = () => {
+		if (amount > 0) {
+			const itemsToAdd = Array.from({ length: amount }, (_, index) => index);
+			setCart((prev) => [...prev, ...itemsToAdd]);
+			setAmount(0);
+		}
+	};
+
 	return (
 		<div className={classNames("w-full flex flex-col justify-center gap-2", "md:gap-6 p-4 sm:p-6 md:p-0")}>
 			<span className="uppercase text-primary-orange font-bold tracking-widest">Sneaker Company</span>
@@ -31,17 +43,7 @@ const Description = () => {
 			</div>
 			<div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-3 select-none">
 				<Counter />
-				<button
-					className={classNames(
-						"flex items-center justify-center gap-3 w-full lg:w-[60%]",
-						"py-3 px-2 rounded-xl",
-						"lg:text-lg font-bold text-white",
-						"bg-primary-orange"
-					)}
-				>
-					<CartIcon mb="0px" />
-					Add to cart
-				</button>
+				<Button icon={<CartIcon mb="0px" />} text="Add to cart" action={handleAddToCart} />
 			</div>
 		</div>
 	);

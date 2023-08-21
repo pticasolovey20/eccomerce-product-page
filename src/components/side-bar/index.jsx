@@ -6,13 +6,13 @@ import { classNames } from "../../utils";
 import CloseIcon from "../icons/CloseIcon";
 
 const SideBar = () => {
-	const { isOpen, setIsOpen } = useApp();
+	const { sideIsOpen, setSideIsOpen } = useApp();
 
 	const variant = { open: { x: 0 }, closed: { x: "-100%" } };
 
 	return (
 		<AnimatePresence>
-			{isOpen && (
+			{sideIsOpen && (
 				<motion.div
 					className={classNames(
 						"fixed top-0 left-0",
@@ -20,12 +20,12 @@ const SideBar = () => {
 						"flex flex-col p-6 gap-8 z-10 bg-white"
 					)}
 					initial="closed"
-					animate={isOpen ? "open" : "closed"}
+					animate={sideIsOpen ? "open" : "closed"}
 					exit="closed"
 					variants={variant}
 					transition={{ duration: 0.2, ease: "easeInOut" }}
 				>
-					<div onClick={() => setIsOpen(false)}>
+					<div onClick={() => setSideIsOpen(false)}>
 						<CloseIcon />
 					</div>
 					<nav>
