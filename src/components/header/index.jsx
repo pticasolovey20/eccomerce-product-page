@@ -1,3 +1,4 @@
+import { useApp } from "../../context/AppContext";
 import { NAVIGATION } from "../../constants";
 import { classNames } from "../../utils";
 
@@ -5,26 +6,30 @@ import LogoIcon from "../icons/LogoIcon";
 import MenuIcon from "../icons/MenuIcon";
 import CartIcon from "../icons/CartIcon";
 
-import avatar from "../../assets/images/image-avatar.png";
+import avatar from "../../assets/image-avatar.png";
 
 const Header = () => {
+	const { setIsOpen } = useApp();
+
 	return (
 		<header
 			className={classNames(
 				"flex justify-center items-center",
-				"px-6 xxl:px-0 select-none",
+				"px-3 sm:px-4 md:px-6 xxl:px-0 select-none",
 				"w-full h-[60px] sm:h-[75px] md:h-[90px] "
 			)}
 		>
 			<div className="w-full xxl:w-[80%] h-full flex items-center justify-between md:border-b ">
-				<div className="flex items-center gap-12 h-full">
+				<div className="flex items-center gap-8 lg:gap-12 h-full">
 					<div className="flex items-center gap-3">
-						<MenuIcon />
+						<div onClick={() => setIsOpen(true)}>
+							<MenuIcon />
+						</div>
 						<div className="mb-2 hidden xs:block">
 							<LogoIcon />
 						</div>
 					</div>
-					<nav className="hidden lg:flex items-center h-full">
+					<nav className="hidden md:flex items-center h-full">
 						<ul className="flex items-center h-full gap-8">
 							{NAVIGATION.map((link, index) => (
 								<li

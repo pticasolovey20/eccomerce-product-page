@@ -1,12 +1,12 @@
-import MAIN_1 from "../../assets/images/image-product-1.jpg";
-import MAIN_2 from "../../assets/images/image-product-2.jpg";
-import MAIN_3 from "../../assets/images/image-product-3.jpg";
-import MAIN_4 from "../../assets/images/image-product-4.jpg";
+import MAIN_1 from "../../assets/image-product-1.jpg";
+import MAIN_2 from "../../assets/image-product-2.jpg";
+import MAIN_3 from "../../assets/image-product-3.jpg";
+import MAIN_4 from "../../assets/image-product-4.jpg";
 
-import TUMB_1 from "../../assets/images/image-product-1-thumbnail.jpg";
-import TUMB_2 from "../../assets/images/image-product-2-thumbnail.jpg";
-import TUMB_3 from "../../assets/images/image-product-3-thumbnail.jpg";
-import TUMB_4 from "../../assets/images/image-product-4-thumbnail.jpg";
+import TUMB_1 from "../../assets/image-product-1-thumbnail.jpg";
+import TUMB_2 from "../../assets/image-product-2-thumbnail.jpg";
+import TUMB_3 from "../../assets/image-product-3-thumbnail.jpg";
+import TUMB_4 from "../../assets/image-product-4-thumbnail.jpg";
 
 import PrevArrowIcon from "../icons/PrevArrowIcon";
 import NextArrowIcon from "../icons/NextArrowIcon";
@@ -66,20 +66,14 @@ const ProductPhotos = () => {
 			>
 				{TUMBS.map(({ src, alt }, index) => (
 					<div key={index} className="w-full h-full relative">
-						<img
-							className={classNames(
-								current === index && "border-primary-orange",
-								"rounded-xl border-[3px] border-transparent"
-							)}
-							src={src}
-							alt={alt}
-						/>
+						<img className="rounded-xl" src={src} alt={alt} />
 						<div
 							onClick={() => setCurrent(index)}
 							className={classNames(
 								"absolute top-0 left-0 w-full h-full",
-								"rounded-xl opacity-60 cursor-pointer",
-								current === index && "bg-primary-pale-orange"
+								"rounded-xl opacity-60 cursor-pointer border-2 border-transparent",
+								current === index && "bg-primary-pale-orange",
+								current === index && "!border-primary-orange"
 							)}
 						/>
 					</div>

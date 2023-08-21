@@ -6,7 +6,7 @@ const MenuIcon = () => {
 			viewBox="0 0 24 24"
 			strokeWidth={1.5}
 			stroke="currentColor"
-			className="w-8 h-8 mb-1 cursor-pointer lg:hidden"
+			className="w-8 h-8 mb-1 cursor-pointer md:hidden"
 		>
 			<path
 				strokeLinecap="round"
