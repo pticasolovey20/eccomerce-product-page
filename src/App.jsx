@@ -13,7 +13,7 @@ const App = () => {
 	const { sideIsOpen, cartIsOpen, handleCloseCart } = useAppContext();
 
 	return (
-		<main className='h-full flex flex-col select-none'>
+		<main className='min-h-screen flex flex-col select-none'>
 			<Header />
 			{sideIsOpen && <SideBar />}
 
