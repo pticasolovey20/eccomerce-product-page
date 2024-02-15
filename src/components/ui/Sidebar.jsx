@@ -31,7 +31,7 @@ export const SideBar = () => {
 					exit='closed'
 					variants={asideToggle}
 					className={cn(
-						'fixed inset-0 h-screen w-full md:hidden',
+						'fixed inset-0 h-[100dvh] w-full md:hidden',
 						'flex flex-col p-6 gap-8 z-10 bg-white'
 					)}
 				>
