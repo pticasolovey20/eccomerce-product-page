@@ -1,23 +1,37 @@
-import { classNames } from "./utils";
+import { useAppContext } from './context/AppContext';
+import { AnimatePresence } from 'framer-motion';
 
-import Layout from "./components/layout";
-import Description from "./components/description";
-import ProductPhotos from "./components/product-photos";
+import { Header } from './components/ui/Header';
+import { SideBar } from './components/ui/Sidebar';
+import { Modal } from './components/ui/Modal';
+import { Cart } from './components/shared/Cart';
+
+import { Gallery } from './components/shared/Gallery';
+import { Description } from './components/shared/Description';
 
 const App = () => {
+	const { sideIsOpen, cartIsOpen, handleCloseCart } = useAppContext();
+
 	return (
-		<Layout>
-			<div
-				className={classNames(
-					"w-full flex flex-col md:flex-row gap-1 md:gap-4 xxl:gap-12",
-					"sm:px-6 md:px-8 xl:px-12 xxl:px-16",
-					"md:py-8 xl:py-16 xxl:py-24"
+		<main className='h-full flex flex-col select-none'>
+			<Header />
+			{sideIsOpen && <SideBar />}
+
+			<AnimatePresence initial={false} mode='wait'>
+				{cartIsOpen && (
+					<Modal label='Cart' handleClose={handleCloseCart}>
+						<Cart />
+					</Modal>
 				)}
-			>
-				<ProductPhotos />
-				<Description />
-			</div>
-		</Layout>
+			</AnimatePresence>
+
+			<section className='flex-1 flex justify-center'>
+				<div className='w-full max-w-[1400px] flex flex-col lg:flex-row xl:gap-10'>
+					<Gallery />
+					<Description />
+				</div>
+			</section>
+		</main>
 	);
 };
 

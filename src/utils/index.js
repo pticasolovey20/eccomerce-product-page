@@ -1,3 +1,4 @@
-export const classNames = (...classes) => {
-	return classes.filter(Boolean).join(" ");
-};
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs) => twMerge(clsx(inputs));
