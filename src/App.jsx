@@ -14,8 +14,10 @@ const App = () => {
 
 	return (
 		<main className='min-h-screen flex flex-col select-none'>
-			<Header />
-			{sideIsOpen && <SideBar />}
+			<>
+				<Header />
+				{sideIsOpen && <SideBar />}
+			</>
 
 			<AnimatePresence initial={false} mode='wait'>
 				{cartIsOpen && (

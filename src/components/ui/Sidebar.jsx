@@ -24,18 +24,18 @@ export const SideBar = () => {
 	return (
 		<AnimatePresence>
 			{sideIsOpen && (
-				<motion.div
-					variants={asideToggle}
+				<motion.aside
+					key='mobile-navigation'
 					initial='closed'
 					animate='open'
 					exit='closed'
+					variants={asideToggle}
 					className={cn(
-						'fixed inset-0 h-screen',
-						'h-full w-full md:hidden',
+						'fixed inset-0 h-screen w-full md:hidden',
 						'flex flex-col p-6 gap-8 z-10 bg-white'
 					)}
 				>
-					<MdClose size={30} onClick={handleCloseSidebar} />
+					<MdClose size={30} onClick={handleCloseSidebar} className='-ml-1' />
 
 					<nav>
 						<ul className='flex flex-col h-full'>
@@ -49,7 +49,7 @@ export const SideBar = () => {
 							))}
 						</ul>
 					</nav>
-				</motion.div>
+				</motion.aside>
 			)}
 		</AnimatePresence>
 	);
