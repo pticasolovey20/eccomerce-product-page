@@ -30,7 +30,7 @@ export const SideBar = () => {
 					animate='open'
 					exit='closed'
 					className={cn(
-						'fixed top-0 left-0',
+						'fixed inset-0 h-screen',
 						'h-full w-full md:hidden',
 						'flex flex-col p-6 gap-8 z-10 bg-white'
 					)}

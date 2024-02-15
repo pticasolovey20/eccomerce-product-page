@@ -10,8 +10,8 @@ const Backdrop = ({ children, onClick }) => {
 			exit={{ opacity: 0 }}
 			onClick={onClick}
 			className={cn(
-				'fixed top-0 left-0 bg-black/40 z-20',
-				'w-full h-[100dvh] flex justify-center items-center'
+				'fixed inset-0 h-screen w-full bg-black/40',
+				'flex justify-center items-center z-20'
 			)}
 		>
 			{children}
