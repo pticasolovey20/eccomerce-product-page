@@ -11,7 +11,7 @@ const Backdrop = ({ children, onClick }) => {
 			onClick={onClick}
 			className={cn(
 				'fixed top-0 left-0 bg-black/40 z-20',
-				'w-full h-full flex justify-center items-center'
+				'w-full h-[100dvh] flex justify-center items-center'
 			)}
 		>
 			{children}

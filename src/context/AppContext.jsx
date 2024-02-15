@@ -21,7 +21,7 @@ export const AppContextProvider = ({ children }) => {
 		if (amount > 0) {
 			const itemsToAdd = Array.from({ length: amount }, (_, index) => index);
 			setCart((prev) => [...prev, ...itemsToAdd]);
-			setAmount(0);
+			setAmount(1);
 		}
 	};
 

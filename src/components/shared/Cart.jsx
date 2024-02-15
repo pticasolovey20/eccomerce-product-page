@@ -18,7 +18,7 @@ export const Cart = () => {
 								<span className='text-xl leading-none'>Fall Limited Edition Sneakers</span>
 
 								<div className='flex gap-2'>
-									<span>$125.00 x =</span>
+									<span>$125.00 x {cart.length} =</span>
 									<span className='font-bold text-black'>${125 * cart.length}</span>
 								</div>
 							</div>

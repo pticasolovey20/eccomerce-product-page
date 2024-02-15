@@ -36,7 +36,7 @@ export const Description = () => {
 						<span className='text-xl md:text-4xl text-neutral-very-dark-blue'>$125.00</span>
 
 						<span className='px-4 py-1 text-xl text-primary-orange rounded-md bg-primary-pale-orange'>
-							50%
+							-50%
 						</span>
 					</div>
 
